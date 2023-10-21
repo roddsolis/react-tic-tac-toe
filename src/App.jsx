@@ -10,7 +10,8 @@ const App = () => {
         <h1>React</h1>
       </div>
       <h6>Ingresa el nombre de ambos jugadores para comenzar.</h6>
-      <Jugador  nombreJugador="Rodrigo" iconoDeJugador={false}/>
+      <Jugador player={1} nombreJugador="Rodrigo" iconoDeJugador={true}/>
+      <Jugador player={2} nombreJugador="Daniela" iconoDeJugador={false}/>
       <div />
     </>
   );

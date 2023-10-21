@@ -1,18 +1,29 @@
 import PropTypes from 'prop-types';
-import Iconos from './Iconos.jsx';
+import Iconos from './Iconos';
+import Input from './Input';
 
-const Jugador = ({nombreJugador, iconoDeJugador}) => {
+
+const Jugador = ({player, nombreJugador, iconoDeJugador}) => {
+
+
+  let jugadorClassName = "jugador"+ player;
+
   return (
     <>
-      <div className="jugador1">
+      <div className={jugadorClassName}>
           <div className="rowContainer">
             <Iconos iconoDeJugador={iconoDeJugador} />
             <p>{nombreJugador}</p>
           </div>
           <div className="rowContainer">
-            <input type="text" placeholder="ingresar nombre"name="nombre" id="nombre" defaultValue=""/>
+          <Input />
           </div>
-
+          <div className="rowContainer">
+            <div className="conteoDePartidasGanadas">
+              <p>Partidas ganadas</p>
+              <p>0</p>
+            </div>
+          </div>
         </div>
     </>
   )

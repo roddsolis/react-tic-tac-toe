@@ -21,6 +21,7 @@
   margin: 0;
   box-sizing: border-box;
   shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
 }
 
 #root {
@@ -59,11 +60,6 @@ h3 {
 
 /* este es el css del main container */
 
-/* .mainContainer {
-  grid-column: 1 / 13;
-  background-color: aqua;
-} */
-
 h6 {
   font-size: 24px;
   font-weight: 500;
@@ -76,9 +72,59 @@ h6 {
   height: fit-content;
 }
 
-.jugador1{
-
-  grid-column: 4 / 6;
-  grid-row: 1fr;
-  padding: 3em;
+p{
+  font-size: 1.5em;
 }
+
+/* este es el css para los elementos de la card de jugador  */
+
+.jugador1{
+  grid-column: 3 / 7;
+  height: fit-content;
+  padding: 2.5em;
+  border: 1px solid var(--border-color);
+
+  & .rowContainer:last-child{
+    padding-bottom: 0;
+  }
+}
+
+.jugador2{
+  grid-column: 7 / 11;
+  height: fit-content;
+  padding: 2.5em;
+  border: 1px solid var(--border-color);
+
+  & .rowContainer:last-child{
+    padding-bottom: 0;
+  }
+}
+
+.rowContainer{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding-bottom: 2em;
+  
+  & .conteoDePartidasGanadas{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+input{
+  height: 48px;
+  padding: 0.8em;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color-1);
+  font-family: "VT323", monospace;
+  font-size: 1.3em; 
+  width: 100%;
+}
+
+input::placeholder{
+  color: var(--inactive-color);
+}
+
+
