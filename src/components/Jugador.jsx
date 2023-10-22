@@ -3,11 +3,12 @@ import Iconos from './Iconos';
 import Input from './Input';
 
 
-const Jugador = ({player, nombreJugador, iconoDeJugador}) => {
+const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartidas}) => {
 
+  console.log(conteoDePartidas)
 
-  let jugadorClassName = "jugador"+ player;
-
+  let jugadorClassName = "jugador"+ numeroDeJugador;
+  
   return (
     <>
       <div className={jugadorClassName}>
@@ -15,10 +16,10 @@ const Jugador = ({player, nombreJugador, iconoDeJugador}) => {
             <Iconos iconoDeJugador={iconoDeJugador} />
             <p>{nombreJugador}</p>
           </div>
-          <div className="rowContainer">
+          <div className="rowContainer" style={conteoDePartidas === true ? {paddingBottom: "2em"} : {paddingBottom: "0"}}>
           <Input />
           </div>
-          <div className="rowContainer">
+          <div className="rowContainer" style={conteoDePartidas === true ? {display: "block" , paddingBottom: "0"} : {display: "none"}}>
             <div className="conteoDePartidasGanadas">
               <p>Partidas ganadas</p>
               <p>0</p>
