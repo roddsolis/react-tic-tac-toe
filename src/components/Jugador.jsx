@@ -1,32 +1,32 @@
 import PropTypes from 'prop-types';
 import Iconos from './Iconos';
 import Input from './Input';
+import { useState, useEffect } from 'react'
 
 
 const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartidas, idNum}) => {
 
-  console.log(conteoDePartidas)
-
-  let jugadorClassName = "jugador"+ numeroDeJugador;
+  const [userName, setUserName ] = useState(nombreJugador),
   
+  jugadorClassName = "jugador"+ numeroDeJugador
+
   return (
     <>
       <div className={jugadorClassName}>
-        {console.log(jugadorClassName)}
-          <div className="rowContainer">
-            <Iconos iconoDeJugador={iconoDeJugador} />
-            <p>{nombreJugador}</p>
+        
+          {/* este contenedor maneja el icono y el nombre del jugador que debe cambiar cuando se ingresa en el input */}
+          <div className="rowContainer"> <Iconos iconoDeJugador={iconoDeJugador} /> <p>{userName}</p> 
           </div>
+          {/* aca esta el componente del input que maneja ambos jugadores */}
           <div className="rowContainer" style={conteoDePartidas === true ? {paddingBottom: "2em"} : {paddingBottom: "0"}}>
-              {jugadorClassName === "jugador1" ? <Input idNum={1}/> : <Input idNum={2}/> } 
+              {jugadorClassName === "jugador1" ? <Input idNum={1} inputChange={(e=>{setUserName(e.target.value)})}/> : <Input idNum={2} inputChange={(e=>{setUserName(e.target.value)})}/> } 
           </div>
+          {/* aca esta el contenido para el contador de partidas ganadas que maneja ambos jugadores*/}
           <div className="rowContainer" style={conteoDePartidas === true ? {display: "block" , paddingBottom: "0"} : {display: "none"}}>
-            <div className="conteoDePartidasGanadas">
-              <p>Partidas ganadas</p>
-              <p>0</p>
-            </div>
+            <div className="conteoDePartidasGanadas"><p>Partidas ganadas</p><p>0</p></div>
           </div>
-        </div>
+
+      </div>
     </>
   )
 }

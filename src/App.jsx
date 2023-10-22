@@ -1,4 +1,5 @@
 import Jugador from "/src/components/Jugador.jsx";
+import Button from "/src/components/Button.jsx"
 
 const App = () => {
   return (
@@ -9,9 +10,12 @@ const App = () => {
         <h3>Whith</h3>
         <h1>React</h1>
       </div>
-      <h6>Ingresa el nombre de ambos jugadores para comenzar.</h6>
-      <Jugador numeroDeJugador={1} nombreJugador="Jugador 1" iconoDeJugador={true} conteoDePartidas={false}/>
-      <Jugador numeroDeJugador={2} nombreJugador="Jugador 2" iconoDeJugador={false} conteoDePartidas={false}/>
+      
+        
+        <h6>Ingresa el nombre de ambos jugadores para comenzar.</h6>
+        <Jugador numeroDeJugador={1} nombreJugador="Jugador 1" iconoDeJugador={true} conteoDePartidas={false}/>
+        <Jugador numeroDeJugador={2} nombreJugador="Jugador 2" iconoDeJugador={false} conteoDePartidas={false}/>
+        <Button textoDelBoton="Comenzar" tipoDeBotton="Primario"/>
   
     </>
   );
