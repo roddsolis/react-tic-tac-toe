@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 
-const Button = ({textoDelBoton}) => {
+const Button = ({textoDelBoton, tipoDeBoton, onClick}) => {
+
+  let setBtnClass = "btn-" + tipoDeBoton
+
 
   return (
     <>
-      <div className="actionsContainer">
-      <button className="btn-primary">{textoDelBoton}</button> {/* para activar el boton hay que eliminar la clase btn-disabled para inabilitar agregar nuevamente la clase*/}
-      </div>
+      <button className={setBtnClass} onClick={onClick} >{textoDelBoton}</button> {/* para activar el boton hay que eliminar la clase btn-disabled para inabilitar agregar nuevamente la clase*/}
     </>
   )
 }

@@ -4,7 +4,7 @@ import Input from './Input';
 import { useState, useEffect } from 'react'
 
 
-const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartidas, idNum}) => {
+const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartidas, idNum, display}) => {
 
   const [userName, setUserName ] = useState(nombreJugador),
   
@@ -18,8 +18,8 @@ const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartid
           <div className="rowContainer"> <Iconos iconoDeJugador={iconoDeJugador} /> <p>{userName}</p> 
           </div>
           {/* aca esta el componente del input que maneja ambos jugadores */}
-          <div className="rowContainer" style={conteoDePartidas === true ? {paddingBottom: "2em"} : {paddingBottom: "0"}}>
-              {jugadorClassName === "jugador1" ? <Input idNum={1} inputChange={(e=>{setUserName(e.target.value)})}/> : <Input idNum={2} inputChange={(e=>{setUserName(e.target.value)})}/> } 
+          <div className="rowContainer" style={conteoDePartidas === true ? {paddingBottom: "2em", display: display} : {paddingBottom: "0"}}>
+              {jugadorClassName === "jugador1" ? <Input display={display} idNum={1} inputChange={(e=>{setUserName(e.target.value)})}/> : <Input display={display} idNum={2} inputChange={(e=>{setUserName(e.target.value)})}/> } 
           </div>
           {/* aca esta el contenido para el contador de partidas ganadas que maneja ambos jugadores*/}
           <div className="rowContainer" style={conteoDePartidas === true ? {display: "block" , paddingBottom: "0"} : {display: "none"}}>
