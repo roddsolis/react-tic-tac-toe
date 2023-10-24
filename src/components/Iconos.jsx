@@ -1,4 +1,4 @@
-const Iconos = ({iconoDeJugador}) => {
+const Iconos = ({iconoDeJugador, iconSize, iconBorder, iconShadow, iconScale}) => {
 
     let icons = [
         [true, <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -13,11 +13,12 @@ const Iconos = ({iconoDeJugador}) => {
       </svg>]
     ]
 
+    console.log(iconoDeJugador)
 
   return (
     <>
 
-    <div className="iconContainer">
+    <div className="iconContainer" style={{width: iconSize, height: iconSize , border: iconBorder, boxShadow: iconShadow, scale: iconScale}}>
         { icons[0][0] === iconoDeJugador ? icons[0][1]: icons[1][1] }
     </div>
     </>

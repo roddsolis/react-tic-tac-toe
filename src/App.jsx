@@ -5,14 +5,23 @@ import { useState, useEffect } from "react";
 
 const App = ({userName}) => {
 
-  let mensajesJuego = {
-    mensaje1: "Comienza " + userName,
-    mensaje2: "turno de " + userName,
-    mensaje3: "¡"+ userName + " ganaste la partida !"
-  } 
-
   
+  
+  
+  
+  
+  let elementoJugador = [<Jugador/ >]
+
+
   const secondContent = ()=>{
+
+    let mensajesJuego = {
+      mensaje1: "Comienza " + elementoJugador[0].props.nombreJugador,
+      mensaje2: "turno de " + elementoJugador[0].props.nombreJugador,
+      mensaje3: "¡"+ elementoJugador[0].props.nombreJugador + " ganaste la partida !"
+    } 
+    
+
     setMainContainer(
       <>
       <h6>{mensajesJuego.mensaje1}</h6>
@@ -28,9 +37,8 @@ const App = ({userName}) => {
       </>
     )
   }
-  
   const [mainContainer, setMainContainer] = useState(
-        
+    
         <>
         <h6>Ingresa el nombre de ambos jugadores para comenzar.</h6>
         <div className="gameContainer1">
@@ -42,9 +50,11 @@ const App = ({userName}) => {
         </div> 
         </>
   );
+  
+  
 
-
-
+  
+  
   return (
     <>
       {/* este es el titulo del juego */}
