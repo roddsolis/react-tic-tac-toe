@@ -1,13 +1,13 @@
 import Iconos from "/src/components/Iconos.jsx";
+import { useState, useEffect } from "react";
 
 
-const TicTacToeItems = ({borderT, borderR, borderB, borderL}) => {
 
-
+const TicTacToeItems = ({valor, clickEnElCuadrado}) => {
 
   return (
     <>
-        <div className="ticTacToeItem" style={{borderTop: borderT ,borderRight: borderR ,borderBottom: borderB, borderLeft: borderL}}><Iconos iconSize="fit-content"  iconBorder="none" iconShadow="none" iconScale="240%" iconoDeJugador={false}/></div>
+       <button className="gameItem" onClick={clickEnElCuadrado}>{valor}</button>
     </>
   )
 }

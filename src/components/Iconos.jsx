@@ -1,4 +1,4 @@
-const Iconos = ({iconoDeJugador, iconSize, iconBorder, iconShadow, iconScale}) => {
+const Iconos = ({iconoDeJugador, iconSize, iconBorder, iconShadow, iconScale, }) => {
 
     let icons = [
         [true, <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -10,16 +10,23 @@ const Iconos = ({iconoDeJugador, iconSize, iconBorder, iconShadow, iconScale}) =
         [false, <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g clipPath="url(#clip0_9_914)">
           <path d="M18.3333 5.83331V4.99998H17.4999V4.16665H16.6666V3.33331H15.8333V2.49998H14.9999V1.66665H14.1666V0.833313H1.66659V1.66665H0.833252V18.3333H1.66659V19.1666H18.3333V18.3333H19.1666V5.83331H18.3333ZM7.49992 15.8333V12.5H8.33325V11.6666H11.6666V12.5H12.4999V15.8333H11.6666V16.6666H8.33325V15.8333H7.49992ZM13.3333 8.33331H3.33325V3.33331H13.3333V8.33331Z" fill="#12E292"/></g>
         <defs><clipPath id="clip0_9_914"><rect width="20" height="20" fill="white"/></clipPath></defs>
-      </svg>]
+      </svg> ],
+      null
     ]
 
-    console.log(iconoDeJugador)
+
+    let iconoObtenido;
+
+    if(iconoDeJugador === true){iconoObtenido = icons[0][1]}
+    else if(iconoDeJugador === false){iconoObtenido = icons[1][1]}
+    else{iconoObtenido = null}
+    
+
 
   return (
     <>
-
     <div className="iconContainer" style={{width: iconSize, height: iconSize , border: iconBorder, boxShadow: iconShadow, scale: iconScale}}>
-        { icons[0][0] === iconoDeJugador ? icons[0][1]: icons[1][1] }
+        { iconoObtenido } 
     </div>
     </>
       

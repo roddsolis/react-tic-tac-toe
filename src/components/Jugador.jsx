@@ -4,18 +4,19 @@ import Input from './Input';
 import { useState, useEffect } from 'react'
 
 
-const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartidas, idNum, display}) => {
+const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartidas, idNum, display, }) => {
 
   const [userName, setUserName ] = useState(nombreJugador),
   
   jugadorClassName = "jugador"+ numeroDeJugador
+
 
   return (
     <>
       <div className={jugadorClassName}>
         
           {/* este contenedor maneja el icono y el nombre del jugador que debe cambiar cuando se ingresa en el input */}
-          <div className="rowContainer"> <Iconos iconoDeJugador={iconoDeJugador} /> <p>{userName}</p> 
+          <div className="rowContainer"> <Iconos iconoDeJugador={iconoDeJugador} /><p>{userName}</p> 
           </div>
           {/* aca esta el componente del input que maneja ambos jugadores */}
           <div className="rowContainer" style={conteoDePartidas === true ? {paddingBottom: "2em", display: display} : {paddingBottom: "0"}}>
@@ -32,7 +33,7 @@ const Jugador = ({numeroDeJugador, nombreJugador, iconoDeJugador, conteoDePartid
 }
 
 Jugador.defaultProps = {
-    nombreJugador: 'player 1', /* para que defaultProps muestre el valor por defecto, el valor por defecto tienes que ser el mismo que el nombre del prop  */
+    nombreJugador: 'player 1', /* para que defaultProps muestre el valor por defecto, el valor por defecto tiene que ser el mismo que el nombre del prop  */
     iconoJugador: true
 }
 

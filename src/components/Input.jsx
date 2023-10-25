@@ -9,7 +9,7 @@ const Input = ({idNum, inputChange, display}) => {
   return (
     <>
     <form action="">
-    <input type="text" placeholder="Ingresa tu nombre" name="nombre" id={idJugador1} defaultValue="" onChange={inputChange} style={{display:display}}/> 
+    <input type="text" placeholder="Ingresa tu nombre" name="nombre" id={idJugador1} defaultValue="" onChange={inputChange} style={{display:display}} autoComplete="off"/> 
     </form>
     </>
   )
