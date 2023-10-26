@@ -75,8 +75,6 @@ const App = () => {
               {/*  aca comienza el contenido 2 */}
               
               <div className="contenido2"  style={mainContainer === true ?  {display: "none"} : {visibility: "visible"}}>
-
-                    <h6>Comienza</h6>
       
                     <div className="gameContainer2">
                     
@@ -97,7 +95,7 @@ const App = () => {
 
                         </div>
                    
-                    <TicTacToe />
+                    <TicTacToe user1={userName1} user2={userName2}/>
 
                         <div className='jugador2'>
                               
