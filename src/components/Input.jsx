@@ -1,15 +1,14 @@
 import { useState } from "react";
 
 
-const Input = ({idNum, inputChange, display}) => {
+const Input = ({inputChange, display, idJugador}) => {
 
-  let idJugador1 = "jugador" + idNum;
-  let idJugador2 = "jugador" + idNum;
+
 
   return (
     <>
     <form action="">
-    <input type="text" placeholder="Ingresa tu nombre" name="nombre" id={idJugador1} defaultValue="" onChange={inputChange} style={{display:display}} autoComplete="off"/> 
+    <input type="text" placeholder="Ingresa tu nombre" name="nombre" id={idJugador} defaultValue="" onChange={inputChange} style={{display:display}} autoComplete="off"/> 
     </form>
     </>
   )
