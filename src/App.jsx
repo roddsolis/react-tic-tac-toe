@@ -81,7 +81,7 @@ const App = () => {
                     <div className="actionsContainer" id="aContainer2">
 
                     <Button textoDelBoton="Volver al inicio" tipoDeBoton="secondary" onClick={()=>{setMainContainer(true)}}/>
-                    <Button textoDelBoton="Iniciar partida" tipoDeBoton="primary" />
+                    <Button textoDelBoton="Reiniciar partida" tipoDeBoton="primary" onClick={()=>{console.log('click desde app')}}/>
 
                     </div>
               </div>

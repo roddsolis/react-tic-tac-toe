@@ -3,11 +3,12 @@ import Iconos from './Iconos'
 import Input from './Input'
 import { useState, useEffect } from "react";
 
-const TicTacToe = ({user1, user2}) => {
+const TicTacToe = ({user1, user2, }) => {
 
 
   const [simboloX ,setSimboloX  ] = useState(true);
   const [simbol ,setSimbol  ] = useState(Array(9).fill(null));
+
 
   const handleClick =(i)=>{
 
