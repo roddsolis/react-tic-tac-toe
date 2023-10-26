@@ -1,4 +1,6 @@
 import TicTacToeItems from "/src/components/TicTacToeItems.jsx";
+import Iconos from './Iconos'
+import Input from './Input'
 import { useState, useEffect } from "react";
 
 const TicTacToe = ({user1, user2}) => {
@@ -61,7 +63,7 @@ const TicTacToe = ({user1, user2}) => {
     status = "ganador: " + ganador;
     console.log(status)
   } else {
-    status = "Siguiente jugador: " + (simboloX ? user1 : user2); 
+    status = "Turno de " + (simboloX ? user1 : user2); 
     console.log(status)
   }
 
@@ -73,27 +75,83 @@ const TicTacToe = ({user1, user2}) => {
     status = `${user2} ganaste la partida!!`
   }
 
+  let contador1 = 0
+  let contador2 = 0
+
+  if(status === `${user1} ganaste la partida!!`){
+    contador1++
+  }else if(status === `${user2} ganaste la partida!!`){
+    contador2++
+  }
+
   return (
     <>
-      <div className="status">{status}</div>
-      <div className="tiTacToeContainer">
-        <div className="row1">
-          <TicTacToeItems valor={simbol[0]} clickEnElCuadrado={() => handleClick(0)}/>
-          <TicTacToeItems valor={simbol[1]} clickEnElCuadrado={() => handleClick(1)}/>
-          <TicTacToeItems valor={simbol[2]} clickEnElCuadrado={() => handleClick(2)}/>
-        </div>
-        <div className="row2">
-          <TicTacToeItems valor={simbol[3]} clickEnElCuadrado={() => handleClick(3)}/>
-          <TicTacToeItems valor={simbol[4]} clickEnElCuadrado={() => handleClick(4)}/>
-          <TicTacToeItems valor={simbol[5]} clickEnElCuadrado={() => handleClick(5)}/>
-        </div>
-        <div className="row3">
-          <TicTacToeItems valor={simbol[6]} clickEnElCuadrado={() => handleClick(6)}/>
-          <TicTacToeItems valor={simbol[7]} clickEnElCuadrado={() => handleClick(7)}/>
-          <TicTacToeItems valor={simbol[8]} clickEnElCuadrado={() => handleClick(8)}/>
-        </div>
-      </div>
+      <div className="gameContainer2">
+                    
+                    <div className='jugador1'>
+                          
+                            <div className="rowContainer"> 
+                            <Iconos iconoDeJugador={true}/>
+                            <p>{user1}</p> 
+                            </div>
+
+                            <div className="rowContainer" style={{paddingBottom: "0", display: 'none'}}>
+                            <Input idJugador='jugador1' display='block' inputChange={(e=>{setUserName1(e.target.value)})}/>  
+                            </div>
+
+                            <div className="rowContainer" style={{display: "block" , paddingBottom: "0"}}>
+                            <div className="conteoDePartidasGanadas"><p>Partidas ganadas</p><p>{contador1}</p></div>
+                            </div> 
+
+                    </div>
+                    
+                    <div className='titactoeWrapper' >
+                          <h6>{status}</h6>
+                          <div className="tiTacToeContainer">
+                            <div className="row1">
+                              <TicTacToeItems valor={simbol[0]} clickEnElCuadrado={() => handleClick(0)}/>
+                              <TicTacToeItems valor={simbol[1]} clickEnElCuadrado={() => handleClick(1)}/>
+                              <TicTacToeItems valor={simbol[2]} clickEnElCuadrado={() => handleClick(2)}/>
+                            </div>
+                            <div className="row2">
+                              <TicTacToeItems valor={simbol[3]} clickEnElCuadrado={() => handleClick(3)}/>
+                              <TicTacToeItems valor={simbol[4]} clickEnElCuadrado={() => handleClick(4)}/>
+                              <TicTacToeItems valor={simbol[5]} clickEnElCuadrado={() => handleClick(5)}/>
+                            </div>
+                            <div className="row3">
+                              <TicTacToeItems valor={simbol[6]} clickEnElCuadrado={() => handleClick(6)}/>
+                              <TicTacToeItems valor={simbol[7]} clickEnElCuadrado={() => handleClick(7)}/>
+                              <TicTacToeItems valor={simbol[8]} clickEnElCuadrado={() => handleClick(8)}/>
+                            </div>
+                          </div>
+                          </div>
+
+                    <div className='jugador2'>
+                          
+                            <div className="rowContainer"> 
+                            <Iconos iconoDeJugador={false}/>
+                            <p>{user2}</p> 
+                            </div>
+
+                            <div className="rowContainer" style={{paddingBottom: "0", display: 'none'}}>
+                            <Input idJugador='jugador2' display='block' inputChange={(e=>{setUserName2(e.target.value)})}/>  
+                            </div>
+
+                            <div className="rowContainer" style={{display: "block" , paddingBottom: "0"}}>
+                            <div className="conteoDePartidasGanadas"><p>Partidas ganadas</p><p>{contador2}</p></div>
+                            {console.log(status)}
+                            </div> 
+
+                    </div>
+                
+
+                </div>
+                
+
+
+      
     </>
+    
   );
 };
 

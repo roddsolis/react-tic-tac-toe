@@ -75,47 +75,8 @@ const App = () => {
               {/*  aca comienza el contenido 2 */}
               
               <div className="contenido2"  style={mainContainer === true ?  {display: "none"} : {visibility: "visible"}}>
-      
-                    <div className="gameContainer2">
-                    
-                        <div className='jugador1'>
-                              
-                                <div className="rowContainer"> 
-                                <Iconos iconoDeJugador={true}/>
-                                <p>{userName1}</p> 
-                                </div>
 
-                                <div className="rowContainer" style={{paddingBottom: "0", display: 'none'}}>
-                                <Input idJugador='jugador1' display='block' inputChange={(e=>{setUserName1(e.target.value)})}/>  
-                                </div>
-
-                                <div className="rowContainer" style={{display: "block" , paddingBottom: "0"}}>
-                                <div className="conteoDePartidasGanadas"><p>Partidas ganadas</p><p>0</p></div>
-                                </div> 
-
-                        </div>
-                   
                     <TicTacToe user1={userName1} user2={userName2}/>
-
-                        <div className='jugador2'>
-                              
-                                <div className="rowContainer"> 
-                                <Iconos iconoDeJugador={false}/>
-                                <p>{userName2}</p> 
-                                </div>
-
-                                <div className="rowContainer" style={{paddingBottom: "0", display: 'none'}}>
-                                <Input idJugador='jugador2' display='block' inputChange={(e=>{setUserName2(e.target.value)})}/>  
-                                </div>
-
-                                <div className="rowContainer" style={{display: "block" , paddingBottom: "0"}}>
-                                <div className="conteoDePartidasGanadas"><p>Partidas ganadas</p><p>0</p></div>
-                                </div> 
-
-                        </div>
-                    
-
-                    </div>
 
                     <div className="actionsContainer" id="aContainer2">
 
